@@ -3,7 +3,7 @@ from schemas import NodalRequest, NodalResponse, VlpIprData
 from shapely.geometry import LineString
 
 
-def __convert_dict_to_linestring_form(data: VlpIprData):
+def __convert_dict_to_linestring_form(data: VlpIprData) -> LineString:
     converted_form = [[p_wf, q_liq] for p_wf, q_liq in zip(data.p_wf, data.q_liq)]
     return LineString(converted_form)
 
